@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sushi</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-container">
+        
+         <img src="{{ url_for('static', filename='imags/menu/logo.jpg') }}" alt="Garnell Logo" class="logo">
+        
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      <ul class="navbar-links" id="navbar-links">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/menu">Menu</a></li>
+        <li><a href="/online">Order Online</a></li>
+        <li><a href="/contact">Contact</a></li>
+          <li><a href="/branches">Branches</a></li>
+          <li><a href="/reservation">Reservation</a></li>
+          <li><a href="/payment">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <header class="head">
+    <h1 class="circle">Sushi</h1>
+    <h1 class="slog">A BITES OF LOVE</h1>
+  </header>
+
+  <div class="ingredients menu">
+    <div class="item">
+      <img src="{{ url_for('static', filename='imags/menu/images.jpg')}}" alt="Fried Rolls">
+      <p>Fried Rolls - 50LE</p>
+      <button class="add-to-cart" data-name="Fried Rolls" data-price="50">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="{{ url_for('static', filename='imags/menu/images (1).jpg')}}" alt="Volcano">
+      <p>Volcano - 70LE</p>
+      <button class="add-to-cart" data-name="Volcano" data-price="70">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="{{ url_for('static', filename='imags/menu/fdb56d145323913.629c95d01d45e.png')}}" alt="Oshi">
+      <p>Oshi - 65LE</p>
+      <button class="add-to-cart" data-name="Oshi" data-price="65">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="{{ url_for('static', filename='imags/menu/51cc50145323913.629c95d01de69.png')}}" alt="URA MAKI">
+      <p>URA MAKI - 50LE</p>
+      <button class="add-to-cart" data-name="URA MAKI" data-price="50">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="{{ url_for('static', filename='imags/menu/images (4).jpg')}}" alt="salmon and shrimp">
+      <p>salmon and shrimp - 80LE</p>
+      <button class="add-to-cart" data-name="salmon and shrimp" data-price="80">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="{{ url_for('static', filename='imags/menu/images (3).jpg')}}" alt="foto maki">
+      <p>foto maki- 90LE</p>
+      <button class="add-to-cart" data-name="foto maki" data-price="90">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="{{ url_for('static', filename='imags/menu/images (2).jpg')}}" alt="shrimp triffle">
+      <p>shrimp triffle - 50LE</p>
+      <button class="add-to-cart" data-name="shrimp triffle" data-price="50">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="{{ url_for('static', filename='imags/menu/649979719355916.jpeg')}}" alt="cream cheese">
+      <p>cream cheese- 75LE</p>
+      <button class="add-to-cart" data-name="cream cheese" data-price="75">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="{{ url_for('static', filename='imags/menu/images (6).jpg')}}" alt="salmon avocado roll">
+      <p>salmon avocado roll- 175LE</p>
+      <button class="add-to-cart" data-name="salmon avocado roll" data-price="175">Add to Cart</button>
+    </div>
+    <div class="item">
+      <img src="{{ url_for('static', filename='imags/menu/images (5).jpg')}}" alt="avocado caterpillar">
+      <p>avocado caterpillar- 150LE</p>
+      <button class="add-to-cart" data-name="avocado caterpillar" data-price="150">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="back-btn">
+    <button onclick="window.open('/menu', '_self')">Back to Menu</button>
+  </div>
+  <button onclick="window.open('/payment', '_self')">Checkout</button>
+
+  <script>
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existingItem = cart.find(item => item.name === name);
+
+      if (existingItem) {
+        existingItem.quantity += 1; 
+      } else {
+        cart.push({ name, price, quantity: 1 }); 
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart)); 
+      alert(`${name} has been added to your cart!`);
+    }
+
+    
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        const name = button.getAttribute('data-name');
+        const price = parseFloat(button.getAttribute('data-price'));
+        addToCart(name, price);
+      });
+    });
+  </script>
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
+</body>
+</html>

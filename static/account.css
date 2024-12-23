@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  .container {
+    display: flex;
+    width: 60%;
+    height: 70%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    gap: 20px;
+  }
+  .acc1 h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-style: italic;
+    margin-right: 60px;
+  }
+  
+  .acc1 {
+    flex: 1;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+  }
+  .acc2 {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius:20px ;
+    border-top-right-radius: 20px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 300px;
+}
+
+.login input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login button {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login button:hover {
+    background-color: #333;
+}
+
+.sloacc2 {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: cursive;
+
+}
+
+.acc1 p{
+    margin-left: 90px;
+    font-family: cursive;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+  
+.acc2 button{
+
+    font-family: cursive;
+  }
+  

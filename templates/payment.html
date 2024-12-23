@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-container">
+         <img src="{{ url_for('static', filename='imags/menu/logo.jpg') }}" alt="Garnell Logo" class="logo">
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      <ul class="navbar-links" id="navbar-links">
+          <li><a href="/home">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/online">Order Online</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/branches">Branches</a></li>
+          <li><a href="/reservation">Reservation</a></li>
+          <li><a href="/payment">Cart</a></li>
+      </ul>
+    </nav>
+   
+  </header>
+
+  <main>
+   
+  <header class="head">
+    <h1 class="circle">Order Receipt</h1>
+    <h2 class="slog">Thank You for Your Purchase!</h2>
+  </header>
+
+  <div class="cart-section">
+    <h2>Receipt</h2>
+    <table id="cart-items">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price (LE)</th>
+          <th>Quantity</th>
+          <th>Subtotal (LE)</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+    <div class="receipt-total">
+      <p><strong>Total order: <span id="grand-total">0</span> </strong></p>
+    </div>
+  </div>
+<div class="bt">
+  <div class="back-btn">
+    <button onclick="window.open('menu.html', '_self')">Back to Menu</button>
+  </div>
+  <div class="back-btn">
+  <button type="button" class="clear" id="clearButton">Clear Cart</button>
+</div>
+</div>
+  
+     <h1>Payment</h1>
+    <form method="POST" action="/payment">
+      <label for="card-number">Card Number:</label>
+      <input type="text" id="card-number" name="card-number" required>
+
+      <label for="expiry-date">Expiry Date:</label>
+      <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" required>
+
+      <label for="amount">Amount (LE):</label>
+      <input type="number" id="amount" name="amount" min="1" required>
+
+      <button type="submit">Pay Now</button>
+    </form>
+
+    <div id="payment-status">
+      {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+      {% endif %}
+      {% if success_message %}
+        <p class="success">{{ success_message }}</p>
+      {% endif %}
+    </div>
+  </main>
+  <script src="{{ url_for('static', filename='js/pay.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
+</body>
+</html>

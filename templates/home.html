@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+<body>
+  <style>
+  body {
+background-color: black;
+  }
+  .home-image {
+    background-image: url("{{ url_for('static', filename='imags/menu/346318.jpg') }}");
+        }
+  </style>
+     <header>
+      <nav>
+        <div class="logo-container">
+            
+           <img src="{{ url_for('static', filename='imags/menu/logo.jpg') }}" alt="Garnell Logo" class="logo">
+           
+        </div>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="navbar-links" id="navbar-links">
+            <li><a href="/home">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/online">Order Online</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/branches">Branches</a></li>
+            <li><a href="/reservation">Reservation</a></li>
+            <li><a href="/payment">Cart</a></li>
+        </ul>
+    </nav>
+      
+  </header>
+  <div class="home-image">
+    <div class="image-content">
+        <h1>GARNELL||</h1>
+       
+
+    </div>
+</div>
+
+        
+    </header>  
+     <div class="hom">
+      <a href="{{ url_for('menu') }}" target="blank"> <button><p class="hom1">Menu</p></button></a>
+      <a href="{{ url_for('online') }}" target="blank"><button><p class="hom1">Order Online</p></button></a>
+      <a href="{{ url_for('reservation') }}" target="blank"><button><p class="hom1">Reservation</p></button></a>
+      <a href="{{ url_for('contact') }}" target="blank"><button><p class="hom1">Contact us</p></button></a>
+      <a href="{{ url_for('branches_view') }}" target="blank"><button><p class="hom1">Our Branches</p></button></a>
+      <a href="{{ url_for('payment') }}" target="blank"><button> <p class="hom1">Cart</p></button></a>
+    </div>
+  
+</body>
+<script>
+  
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach(button => {
+    button.addEventListener('mouseover', () => {
+      button.style.backgroundColor = 'grey';
+    });
+    button.addEventListener('mouseout', () => {
+      button.style.backgroundColor = '';
+    });
+  });
+</script>
+
+
+<script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
+</html>

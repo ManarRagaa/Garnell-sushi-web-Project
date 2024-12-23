@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact </title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+
+</head>
+
+<body>
+  <nav>
+    <div class="logo-container">
+        
+            <img src="{{ url_for('static', filename='imags/menu/logo.jpg') }}" alt="Garnell Logo" class="logo">
+       
+    </div>
+    <div class="hamburger-menu" id="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="navbar-links" id="navbar-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/online">Order Online</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/branches">Branches</a></li>
+        <li><a href="/reservation">Reservation</a></li>
+        <li><a href="/payment">Cart</a></li>
+    </ul>
+  </nav>
+
+    <style>
+        body{
+          background-color: black;
+        }
+      </style>
+<div class="container">
+    <div class="cre">
+    <h1>Contact us</h1>
+    <div class="cont">
+    <p> email : Garnel10@gmail.com</p>
+    <p> phone: 01093783563</p>
+    <p>hotline :19167</p>
+</div>
+    </div>
+    <form action="menu.html" method="POST">
+
+    </form>
+
+</div>
+<script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
+</body>
+</html>

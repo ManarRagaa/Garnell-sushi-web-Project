@@ -1,0 +1,110 @@
+
+/* Basic Navbar Styles */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px 20px;
+    position: relative;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .logo-container img.logo {
+    height: 50px;
+    width: auto;
+  }
+  
+  /* HAMBURGER MENU STYLES */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    gap: 5px;
+    position: absolute;
+    right: 20px;
+    z-index: 2000; /* Ensure hamburger is above navbar links */
+  }
+  
+  .hamburger-menu span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    border-radius: 2px;
+  }
+  
+  /* NAVBAR LINKS STYLES */
+  .navbar-links {
+    display: flex; /* Display navbar items horizontally by default */
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px; /* Space between links */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    color: white;
+  }
+  
+  .navbar-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .navbar-links a:hover {
+    color: #ecf0f1;
+  }
+  
+  /* RESPONSIVE STYLES */
+  @media (max-width: 768px) {
+    /* For mobile screens */
+    .navbar-links {
+      display: none; /* Hide the navbar links by default */
+      flex-direction: column;
+      position: absolute;
+      top: 60px; /* Adjust based on the height of the header */
+      right: 20px;
+      background-color: black;
+      padding: 10px 20px;
+      border-radius: 5px;
+      gap: 10px;
+      width: auto; /* Width is content-dependent */
+      max-width: 200px; /* Optional: set a max width to keep it neat */
+    }
+  
+    .navbar-links.show {
+      display: flex; /* Show the links when the 'show' class is applied */
+    }
+  
+    .hamburger-menu {
+      /* Position hamburger menu correctly */
+      right: 15px;
+    }
+  }
+  
+  /* Additional Media Queries for larger screen sizes */
+  @media (min-width: 769px) {
+    .hamburger-menu {
+      display: none; /* Hide hamburger menu on larger screens */
+    }
+  
+    .navbar-links {
+      display: flex; /* Links should be displayed horizontally */
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px; /* Space between links */
+      position: static; /* Make the links static for larger screens */
+      background-color: transparent;
+    }
+  }
+  

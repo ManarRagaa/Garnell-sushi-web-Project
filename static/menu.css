@@ -1,0 +1,60 @@
+
+@media (max-width: 600px) {
+        body {
+          flex-direction: column; 
+        }
+      }
+  
+      .menu {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh; /* Full viewport height */
+        background-color: black; /* Optional */
+      }
+      
+      .circle-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 50%; /* Optional: Adjust width for spacing */
+    
+      }
+      
+      .circle {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        text-align: center;
+        font-family:'cursive','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+      }
+
+      .circle:hover {
+        background-color: white; 
+        transform: scale(1.2);
+      }
+
+      a{
+        text-decoration: none;
+      }
+
+       h1{
+        color: white;
+        text-align: center;
+        margin-top: 50px;
+        margin-left: 40px;
+        font-style: italic;
+        font-family:'cursive','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      
+      }
+      

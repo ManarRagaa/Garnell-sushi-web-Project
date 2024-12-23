@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+
+</head>
+<body>
+  <style>
+    body{
+      background-color: black;
+    }
+  </style>
+      <header>
+        <nav>
+          <div class="logo-container">
+              
+                  <img src="{{ url_for('static', filename='imags/menu/logo.jpg') }}" alt="Garnell Logo" class="logo">
+            
+          </div>
+          <div class="hamburger-menu" id="hamburger-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+          <ul class="navbar-links" id="navbar-links">
+              <li><a href="/home">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/online">Order Online</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/branches">Branches</a></li>
+              <li><a href="/reservation">Reservation</a></li>
+              <li><a href="/payment">Cart</a></li>
+          </ul>
+        </nav>
+   </header>
+   <h1>A World of Delicious Choices</h1>
+     
+  <div class="menu">
+   <div class="circle-container">
+   <a href="{{ url_for('sushi') }}"> <div class="circle">Sushi</div></a>
+    <a href="{{ url_for('dessert') }}"><div class="circle">Dessert</div></a>
+  </div>
+</div>
+</div>
+  <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
+</body>
+</html>

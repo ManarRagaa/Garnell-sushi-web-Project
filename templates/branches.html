@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Branches</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css')}}">
+</head>
+<body>
+  <nav>
+    <div class="logo-container">
+        
+       <img src="{{ url_for('static', filename='imags/menu/logo.jpg') }}" alt="Garnell Logo" class="logo">
+       
+    </div>
+    <div class="hamburger-menu" id="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="navbar-links" id="navbar-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/online">Order Online</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/branches">Branches</a></li>
+        <li><a href="/reservation">Reservation</a></li>
+        <li><a href="/payment">Cart</a></li>
+    </ul>
+</nav>
+
+  <div class="branch-container">
+    <h2>Our Branches</h2>
+    <ul>
+      {% for branch in branches %}
+        <li><a href="{{ branch.url }}" target="_blank">{{ branch.name }}</a></li>
+        <p>Phone: {{ branch.phone }}</p>
+      {% endfor %}
+    </ul>
+  </div>
+  
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+</body>
+</html>

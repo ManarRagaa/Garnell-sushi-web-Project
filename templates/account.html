@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GARNELL Sushi & poke</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='account.css') }}">
+</head>
+<body>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+    <div class="container">
+        <div class="acc1">
+            <h1> GARNELL</h1>
+            <p> Craving sushi? , One Roll at a Time.</p>
+        </div>
+        <div class="acc2">
+            
+            <form class="login" action="{{ url_for('account') }}" method="POST">
+                <p class="sloacc2"> Login And Experience The Art Of Sushi</p>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="{{ url_for('create') }}">Create account</a></p>
+            
+            {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+        </div> 
+    
+    </div>
+</form>
+    <script src="{{ url_for('static', filename='js/acc.js') }}"></script>
+</body>
+</html>
